@@ -1,0 +1,83 @@
+ComicBookTitle:
+
+Fill,GetData:
+
+SELECT        Title, FirstIssue, LastIssue, NumIssues, NumSpIssues
+FROM            ComicBookTitle
+
+
+DeleteDetails:
+
+DELETE FROM ComicBookDetails
+WHERE        (Title = @Param1)
+
+
+
+FillSearch, GetDataSearch:
+
+SELECT        Title, FirstIssue, LastIssue, NumIssues, NumSpIssues
+FROM            ComicBookTitle
+WHERE        (Title LIKE '%' + @Param1 + '%')
+
+
+
+InsertDetails1:
+
+INSERT INTO ComicBookDetails
+                         (Own, Want, Title, SpecialIssue, IssueNum)
+VALUES        (0, 0,@Param1, 0,@Param2)
+
+
+
+InsertDetails2:
+
+INSERT INTO ComicBookDetails
+                         (Own, Want, Title, SpecialIssue, IssueNum, IssueName)
+VALUES        (0, 0,@Param1,1,@Param2, 'SP' +@Param3); 
+
+
+
+Insert Titles:
+
+INSERT INTO ComicBookTitle
+                         (Title, FirstIssue, LastIssue, NumIssues, NumSpIssues)
+VALUES        (@Param1,@Param2,@Param3,@Param4,@Param5)
+
+
+UpdateTitles:
+
+UPDATE       ComicBookTitle
+SET                Title = @Param1, FirstIssue = @Param2, LastIssue = @Param3, NumIssues = @Param4, NumSpIssues = @Param5
+WHERE        (Title = @Param6)
+
+
+
+ComicBookDetails1:
+
+SELECT Own, Want, Title, SpecialIssue, IssueNum, IssueName, Grade, Rating, Description FROM ComicBookDetails WHERE (Want = 'True')
+
+
+FillOwn, GetDataOwn:
+SELECT Description, Grade, IssueName, IssueNum, Own, Rating, SpecialIssue, Title, Want FROM ComicBookDetails WHERE (Own = 'True')
+
+FillOwnSearch, GetDataOwnSearch:
+SELECT Description, Grade, IssueName, IssueNum, Own, Rating, SpecialIssue, Title, Want FROM ComicBookDetails WHERE (Own = 'True') AND (Title LIKE '%' + @Param1 + '%')
+
+
+FillWantSearch, GetDataWantSearch:
+SELECT Description, Grade, IssueName, IssueNum, Own, Rating, SpecialIssue, Title, Want FROM ComicBookDetails WHERE (Want = 'True') AND (Title LIKE '%' + @Param1 + '%')
+
+
+UpdateDetailsIndi:
+
+UPDATE       ComicBookDetails
+SET                Own = @Param1, Want = @Param2, Title = @Param3, SpecialIssue = @Param4, IssueNum = @Param5, IssueName = @Param6, Grade = @Param7, 
+                         Rating = @Param8, Description = @Param9
+WHERE        (Title = @Param3) AND (SpecialIssue = @Param4) AND (IssueNum = @Param5)
+
+
+
+
+UPDATE       ComicBookDetails
+SET                Own = @Param1, Want = @Param2, Title = @Param3, SpecialIssue = @Param4, IssueNum = @Param5, IssueName = @Param6, Grade = @Param7, 
+                         Rating = @Param8, Description = @Param9

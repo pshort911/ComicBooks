@@ -1,0 +1,264 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A1C8AE27-E345-4746-8B24-5B5A39A9CBC1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Comics</RootNamespace>
+    <AssemblyName>Comics</AssemblyName>
+    <ManifestCertificateThumbprint>56B78260CFD43CBB086706C767FA19473964FE80</ManifestCertificateThumbprint>
+    <ManifestKeyFile>Comics_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>true</SignManifests>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <StartupObject>Comics.Titles</StartupObject>
+    <PublishUrl>C:\Comics\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <CreateWebPageOnPublish>false</CreateWebPageOnPublish>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.Smo, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\WINDOWS\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ComicBookDataSet.cs">
+      <DependentUpon>ComicBookDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ComicBookDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ComicBookDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NumberOfOwnedPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NumberOfOwnedPrint.Designer.cs">
+      <DependentUpon>NumberOfOwnedPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NumberOfOwnedPrintSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NumberOfOwnedPrintSearch.Designer.cs">
+      <DependentUpon>NumberOfOwnedPrintSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetailsIndividually.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetailsIndividually.Designer.cs">
+      <DependentUpon>DetailsIndividually.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NumberOfOwned.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NumberOfOwned.Designer.cs">
+      <DependentUpon>NumberOfOwned.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OwnList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OwnList.Designer.cs">
+      <DependentUpon>OwnList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OwnListPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OwnListPrint.Designer.cs">
+      <DependentUpon>OwnListPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OwnListPrintSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OwnListPrintSearch.Designer.cs">
+      <DependentUpon>OwnListPrintSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WantList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WantList.Designer.cs">
+      <DependentUpon>WantList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Details.Designer.cs">
+      <DependentUpon>Details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Report2a.rdlc" />
+    <EmbeddedResource Include="Report1a.rdlc" />
+    <EmbeddedResource Include="NumberOfOwnedPrint.resx">
+      <DependentUpon>NumberOfOwnedPrint.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NumberOfOwnedPrintSearch.resx">
+      <DependentUpon>NumberOfOwnedPrintSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetailsIndividually.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DetailsIndividually.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NumberOfOwned.resx">
+      <DependentUpon>NumberOfOwned.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OwnList.resx">
+      <DependentUpon>OwnList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OwnListPrint.resx">
+      <DependentUpon>OwnListPrint.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OwnListPrintSearch.resx">
+      <DependentUpon>OwnListPrintSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report3.rdlc" />
+    <EmbeddedResource Include="WantList.resx">
+      <DependentUpon>WantList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Details.resx">
+      <DependentUpon>Details.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Titles.resx">
+      <DependentUpon>Titles.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WantListPrint.resx">
+      <DependentUpon>WantListPrint.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WantListPrintSearch.resx">
+      <DependentUpon>WantListPrintSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Backup.bat" />
+    <None Include="BackupToThumbDrive.bat" />
+    <None Include="ComicBookDataSet.xsc">
+      <DependentUpon>ComicBookDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ComicBookDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ComicBookDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ComicBookDataSet.xss">
+      <DependentUpon>ComicBookDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Titles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Titles.designer.cs">
+      <DependentUpon>Titles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WantListPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WantListPrint.Designer.cs">
+      <DependentUpon>WantListPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WantListPrintSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WantListPrintSearch.Designer.cs">
+      <DependentUpon>WantListPrintSearch.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Sql.Server.Express.1.0">
+      <Visible>False</Visible>
+      <ProductName>SQL Server 2005 Express Edition</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
